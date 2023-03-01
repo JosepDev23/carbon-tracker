@@ -1,0 +1,16 @@
+
+
+.landing-container {
+  display: flex;
+  height: 100vh;
+
+  .landing-left {
+    background-color: blue;
+    width: 30vw;
+  }
+
+  .landing-right {
+    background-color: red;
+    width: 70vw;
+  }
+}
