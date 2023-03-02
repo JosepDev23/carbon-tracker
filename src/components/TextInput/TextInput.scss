@@ -1,5 +1,37 @@
 
-.text-input-container {
-  display: flex;
-  flex-direction: row;
+.text-input-container{
+  margin: 10px;
+}
+
+.input {
+  position: relative;
+  
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  &__field {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    box-sizing: border-box;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    color: currentColor;
+    
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input__label {
+        transform: translate(.25rem, -65%) scale(.8);
+      }
+    }
+  }
 }

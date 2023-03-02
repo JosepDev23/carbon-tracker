@@ -13,7 +13,6 @@ const BasicForm: React.FC = () => {
   return (
     <div className='basic-form-container'>
       <form>
-        <h1>YourTrip</h1>
         <div className='basic-form-content'>
           <TextInput
             label='Origin'

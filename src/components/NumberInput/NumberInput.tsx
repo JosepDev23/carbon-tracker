@@ -1,3 +1,4 @@
+import './NumberInput.scss'
 import { SetStateAction } from "react";
 
 
@@ -11,11 +12,13 @@ const NumberInput: React.FC<NumberInputProps> = (props) => {
 
   return (
     <div className="number-input-container">
-      <label>{props.label}</label>
+      <div className='number-input-label'>
+        <label>{props.label}</label>
+      </div>
       <input
         type="number"
         value={props.value}
-        onChange={(event) => {props.setValue(Number(event.target.value))}}
+        onChange={(event) => { props.setValue(Number(event.target.value)) }}
       />
     </div>
   )

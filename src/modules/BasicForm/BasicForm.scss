@@ -1,13 +1,13 @@
 
 
 .basic-form-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  background-color: yellow;
-
-  h1 {
-    color: pink;
-  }
   .basic-form-content {
-    background-color: green;
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -7,11 +7,11 @@ const Landing: React.FC = () => {
 
   return (
     <div className='landing-container'>
-      <div className='landing-left'>
-        <BasicForm />
-      </div>
-      <div className='landing-right'>
+      <div className='landing-background'>
         <Map />
+      </div>
+      <div className='landing-card'>
+        <BasicForm />
       </div>
     </div>
   )
