@@ -1,6 +1,6 @@
-import GoogleMaps from '../../components/GoogleMaps/GoogleMaps';
+import './Landing.scss';
 import BasicForm from '../BasicForm/BasicForm';
-import './Landing.scss'
+import Map from '../../components/Map/Map'
 
 
 const Landing: React.FC = () => {
@@ -11,7 +11,7 @@ const Landing: React.FC = () => {
         <BasicForm />
       </div>
       <div className='landing-right'>
-        <GoogleMaps />
+        <Map />
       </div>
     </div>
   )
