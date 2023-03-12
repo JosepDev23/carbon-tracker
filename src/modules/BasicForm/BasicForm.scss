@@ -9,5 +9,17 @@
   .basic-form-content {
     display: flex;
     flex-direction: column;
+
+    .button-calculate {
+      height: 50px;
+      border: none;
+      border-radius: 15px;
+      background-color: whitesmoke;
+      margin-top: 5px;
+
+      &:hover {
+        background-color: purple;
+      }
+    }
   }
 }

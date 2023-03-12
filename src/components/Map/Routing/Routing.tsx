@@ -2,9 +2,13 @@ import L from "leaflet";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+import { Directions } from "../../../models/Directions";
 
+export interface RoutingProps {
+  directions: Directions;
+}
 
-const Routing = () => {
+const Routing: React.FC<RoutingProps> = (props) => {
   const map = useMap();
 
   useEffect(() => {

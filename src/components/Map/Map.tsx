@@ -1,15 +1,18 @@
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import 'leaflet-routing-machine';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 import Routing from "./Routing/Routing";
+import { Directions } from "../../models/Directions";
 
-const Map: React.FC = () => {
+export interface MapProps {
+  directions: Directions;
+}
+
+const Map: React.FC<MapProps> = (props) => {
 
   return (
     <MapContainer
       style={{ height: "100%", width: '100%' }}
-      center={[51.505, -14.09]}
       zoom={5}
       scrollWheelZoom={true}
     >
@@ -17,7 +20,9 @@ const Map: React.FC = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Routing />
+      <Routing 
+        directions={props.directions}
+      />
     </MapContainer>
   );
 }

@@ -1,18 +1,30 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import NumberInput from '../../components/NumberInput/NumberInput';
 import TextInput from '../../components/TextInput/TextInput';
+import { Directions } from '../../models/Directions';
 import './BasicForm.scss'
 
 
-const BasicForm: React.FC = () => {
+export interface BasicFormProps {
+  setDirections: Dispatch<SetStateAction<Directions>>;
+  setConsumption: Dispatch<SetStateAction<number>>;
+}
+
+const BasicForm: React.FC<BasicFormProps> = (props) => {
 
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [consumption, setConsumption] = useState(0);
 
+  const handleSubmit = () => {
+    props.setDirections({ origin: origin, destination: destination })
+  }
+
   return (
     <div className='basic-form-container'>
-      <form>
+      <form
+        onSubmit={handleSubmit}
+      >
         <div className='basic-form-content'>
           <TextInput
             label='Origin'
@@ -29,6 +41,12 @@ const BasicForm: React.FC = () => {
             value={consumption}
             setValue={setConsumption}
           />
+          <button
+            className='button-calculate'
+            type='submit'
+          >
+            Calculate your emissions!
+          </button>
         </div>
       </form>
     </div>
