@@ -30,7 +30,7 @@
     &:focus,
     &:not(:placeholder-shown) {
       & + .input__label {
-        transform: translate(.25rem, -65%) scale(.8);
+        transform: translate(.25rem, -85%) scale(.8);
       }
     }
   }
